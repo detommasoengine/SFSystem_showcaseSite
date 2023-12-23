@@ -1,0 +1,80 @@
+<div class="container m-5">
+  <h1 class="text-primary text-center">Leggi file Excel e mostra nella tabella</h1>
+  <input type="file" class="form-control w-50" (change)="ReadExcelFile($event)" >
+  <table mat-table [dataSource]="ExcelData" *ngIf="ExcelData && ExcelData.length > 0" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="data">
+      <th mat-header-cell *matHeaderCellDef> Data </th>
+      <td mat-cell *matCellDef="let element"> {{element.data}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="tempMedia">
+      <th mat-header-cell *matHeaderCellDef> TMedia °C </th>
+      <td mat-cell *matCellDef="let element"> {{element.tempMedia}} </td>
+    </ng-container>
+  
+     <!-- Temperatura minima Column -->
+     <ng-container matColumnDef="tempMin">
+      <th mat-header-cell *matHeaderCellDef> Tmin °C </th>
+      <td mat-cell *matCellDef="let element"> {{element.tempMin}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="tempMax">
+      <th mat-header-cell *matHeaderCellDef> TMAX °C </th>
+      <td mat-cell *matCellDef="let element"> {{element.tempMax}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="umiditaRelativa">
+      <th mat-header-cell *matHeaderCellDef> UMIDITA % </th>
+      <td mat-cell *matCellDef="let element"> {{element.umiditaRelativa}} </td>
+    </ng-container>
+  
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="visibilitaKm">
+        <th mat-header-cell *matHeaderCellDef> VISIBILITA km </th>
+        <td mat-cell *matCellDef="let element"> {{element.visibilitaKm}} </td>
+      </ng-container>
+
+        <!-- Symbol Column -->
+    <ng-container matColumnDef="ventoMediaSpeed">
+      <th mat-header-cell *matHeaderCellDef> VENTOMEDIA km/h </th>
+      <td mat-cell *matCellDef="let element"> {{element.ventoMediaSpeed}} </td>
+    </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="ventoMaxSpeed">
+        <th mat-header-cell *matHeaderCellDef> VENTOMAX km/h </th>
+        <td mat-cell *matCellDef="let element"> {{element.ventoMaxSpeed}} </td>
+      </ng-container>
+
+        <!-- Symbol Column -->
+    <ng-container matColumnDef="pressioneSlm">
+      <th mat-header-cell *matHeaderCellDef> PRESSIONESLM mb </th>
+      <td mat-cell *matCellDef="let element"> {{element.pressioneSlm}} </td>
+    </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="pioggiamm">
+        <th mat-header-cell *matHeaderCellDef> PIOGGIA mm </th>
+        <td mat-cell *matCellDef="let element"> {{element.pioggiamm}} </td>
+      </ng-container>
+
+        <!-- Symbol Column -->
+    <ng-container matColumnDef="irraggiamento">
+      <th mat-header-cell *matHeaderCellDef> Irraggiamento [Wh/m²]  </th>
+      <td mat-cell *matCellDef="let element"> {{element.irraggiamento}} </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  
