@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
 import {MatTableModule} from '@angular/material/table';
 // import { ngxCsv } from 'ngx-csv';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {MatToolbarModule} from '@angular/material/toolbar';
+// import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+// import {MatToolbarModule} from '@angular/material/toolbar';
 // import { Papa } from 'ngx-papaparse';
 
 
@@ -26,6 +26,7 @@ import { MontemesolaComponent } from './Component/montemesola/montemesola.compon
 
 @NgModule({
   declarations: [
+    TableBasicExample,
     AppComponent,
     // HeaderComponent,
     GinosaComponent,
@@ -38,15 +39,14 @@ import { MontemesolaComponent } from './Component/montemesola/montemesola.compon
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    TableBasicExample,
     HttpClientModule,
     CommonModule,
-    MatTableModule
+    MatTableModule,
     // MatSlideToggleModule,
     // MatToolbarModule,                                                                                                                                                  
   ],
   providers: [
-    provideClientHydration()
+    // provideClietHydration()
   ],
   bootstrap: [AppComponent]
 })

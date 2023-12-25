@@ -1,6 +1,6 @@
 <div class="container m-5">
-  <h1 class="text-primary text-center">Leggi file Excel e mostra nella tabella</h1>
-  <input type="file" class="form-control w-50" (change)="ReadExcelFile($event)" >
+  <!-- <h1 class="text-primary text-center">Leggi file Excel e mostra nella tabella</h1>
+  <input type="file" class="form-control w-50" (change)="ReadExcelFile($event)" > -->
   <table mat-table [dataSource]="ExcelData" *ngIf="ExcelData && ExcelData.length > 0" class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
@@ -73,8 +73,8 @@
     </ng-container>
 
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr> -->
+    <!-- <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr> -->
   </table>
   
   
