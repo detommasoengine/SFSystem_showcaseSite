@@ -12,7 +12,7 @@ constructor() {}
   // Funzione per leggere e parserizzare il file Excel
   readExcel(filePath: string): Promise<any[]> {
     return new Promise((resolve, reject) => {
-      // Sostituire con il percorso del tuo file Excel
+      // Percorso del file Excel
       fetch('../assets/data.xlsx')
         .then((response) => response.blob())
         .then((blob) => {
