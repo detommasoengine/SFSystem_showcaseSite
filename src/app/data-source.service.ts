@@ -13,7 +13,7 @@ constructor() {}
   readExcel(filePath: string): Promise<any[]> {
     return new Promise((resolve, reject) => {
       // Sostituire con il percorso del tuo file Excel
-      fetch('file')
+      fetch('../assets/data.xlsx')
         .then((response) => response.blob())
         .then((blob) => {
           const file = new File([blob], '../assets/data.xlsx', { type: 'application/vnd.ms-excel' });
