@@ -1,0 +1,86 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+     <!-- Data Column -->
+  <ng-container matColumnDef="data">
+    <th mat-header-cell *matHeaderCellDef> Data </th>
+    <td mat-cell *matCellDef="let element"> {{element.data}} </td>
+  </ng-container>
+
+  <!-- tempMedia Column -->
+  <ng-container matColumnDef="tempMedia">
+    <th mat-header-cell *matHeaderCellDef> Temperature Media °C</th>
+    <td mat-cell *matCellDef="let element"> {{element.tempMedia}} </td>
+  </ng-container>
+
+  <!-- tempMin Column -->
+  <ng-container matColumnDef="tempMin">
+    <th mat-header-cell *matHeaderCellDef> Temperature Minima °C</th>
+    <td mat-cell *matCellDef="let element"> {{element.tempMin}} </td>
+  </ng-container>
+  
+   <!-- tempMax Column -->
+   <ng-container matColumnDef="tempMax">
+    <th mat-header-cell *matHeaderCellDef> Temperature Massima °C</th>
+    <td mat-cell *matCellDef="let element"> {{element.tempMax}} </td>
+  </ng-container>
+
+   <!-- puntoRugiada Column -->
+   <ng-container matColumnDef="puntoRugiada">
+    <th mat-header-cell *matHeaderCellDef> Punto di Rugiada </th>
+    <td mat-cell *matCellDef="let element"> {{element.puntoRugiada}} </td>
+  </ng-container>
+
+   
+  
+  <!-- umiditàRela Column -->
+<ng-container matColumnDef="umiditaRelativa">
+    <th mat-header-cell *matHeaderCellDef> UMIDITA % </th>
+    <td mat-cell *matCellDef="let element"> {{element.umiditaRelativa}} </td>
+  </ng-container>
+
+
+<!-- Symbol Column -->
+<ng-container matColumnDef="visibilitaKm">
+    <th mat-header-cell *matHeaderCellDef> VISIBILITA km </th>
+    <td mat-cell *matCellDef="let element"> {{element.visibilitaKm}} </td>
+  </ng-container>
+
+    <!-- Symbol Column -->
+<ng-container matColumnDef="ventoMediaSpeed">
+  <th mat-header-cell *matHeaderCellDef> VENTOMEDIA km/h </th>
+  <td mat-cell *matCellDef="let element"> {{element.ventoMediaSpeed}} </td>
+</ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="ventoMaxSpeed">
+    <th mat-header-cell *matHeaderCellDef> VENTOMAX km/h </th>
+    <td mat-cell *matCellDef="let element"> {{element.ventoMaxSpeed}} </td>
+  </ng-container>
+
+    <!-- Symbol Column -->
+<ng-container matColumnDef="pressioneSlm">
+  <th mat-header-cell *matHeaderCellDef> PRESSIONESLM mb </th>
+  <td mat-cell *matCellDef="let element"> {{element.pressioneSlm}} </td>
+</ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="pioggiamm">
+    <th mat-header-cell *matHeaderCellDef> PIOGGIA mm </th>
+    <td mat-cell *matCellDef="let element"> {{element.pioggiamm}} </td>
+  </ng-container>
+
+    <!-- Symbol Column -->
+<ng-container matColumnDef="irraggiamento">
+  <th mat-header-cell *matHeaderCellDef> Irraggiamento [Wh/m²]  </th>
+  <td mat-cell *matCellDef="let element"> {{element.irraggiamento}} </td>
+</ng-container>
+
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
