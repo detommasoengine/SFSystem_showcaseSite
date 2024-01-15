@@ -38,31 +38,26 @@ interface ExportColumn {
   styleUrls: ['./tables-dashboard.component.css'],
 })
 export class TablesDashboardComponent implements OnInit {
+
   dati!: DataModel[]; // Assicurati di specificare il percorso corretto
-
   // dialogVisible: boolean = true;
-
-
   selectedData!: DataModel[];
+  cols!: Column[];
+  selectedColumns!: Column[];
+  exportColumns!: ExportColumn[];
 
-  
   constructor(
     private dataService: DataSourceGrottaglieService,
     private cd: ChangeDetectorRef,
-    
-  ) {}
 
-  cols!: Column[];
+  ) { }
 
-
-  
-  selectedColumns!: Column[];
-
-  exportColumns!: ExportColumn[];
 
   ngOnInit() {
+
     this.dataService.getDataSet().then((data) => {
       this.dati = data;
+      this.selectedData = data;
       this.cd.markForCheck();
     });
 
@@ -70,7 +65,7 @@ export class TablesDashboardComponent implements OnInit {
     //      { field: 'cols!: Column[];
 
     this.cols = [
-      { field: 'DATA', header: 'Data'},
+      { field: 'DATA', header: 'Data' },
       { field: 'tempMedia', header: 'TMedia °C' },
       { field: 'tempMin', header: 'Tmin °C' },
       { field: 'tempMax', header: 'TMAX °C' },
@@ -93,14 +88,14 @@ export class TablesDashboardComponent implements OnInit {
       { field: 'et0', header: 'ET0' },
       { field: 'kc', header: 'kc' },
       { field: 'etc', header: 'Etc' },
-      { field: 'etcHargPioggiaEffettiva', header: 'Etc Harg. - pioggia Effettiva'},
+      { field: 'etcHargPioggiaEffettiva', header: 'Etc Harg. - pioggia Effettiva' },
       { field: 'turnoIrrigoHarg', header: 'Turno irriguo Harg. (mm)' },
       { field: 'turnoIrrigoHarg1', header: 'Turno irriguo Harg. (mm)' },
     ];
 
 
 
-    
+
     this.exportColumns = this.cols.map((col) => ({
       title: col.header,
       dataKey: col.field,
@@ -108,50 +103,50 @@ export class TablesDashboardComponent implements OnInit {
 
     this.selectedColumns = this.cols;
 
-//     // Assicurati che la colonna "DATA" sia presente nelle colonne selezionate
-// const dataColumn = this.cols.find(col => col.field === 'DATA');
-// if (dataColumn) {
-//   this.selectedColumns.unshift(dataColumn);
-// }
+    //     // Assicurati che la colonna "DATA" sia presente nelle colonne selezionate
+    // const dataColumn = this.cols.find(col => col.field === 'DATA');
+    // if (dataColumn) {
+    //   this.selectedColumns.unshift(dataColumn);
+    // }
   }
 
 
-//   showDialog() {
-//     this.dialogVisible = true;
- 
-    
-// }
+  //   showDialog() {
+  //     this.dialogVisible = true;
+
+
+  // }
 
 
 
 
 
-//   exportPdf() {
-//     import('jspdf').then((jsPDF) => {
-//         import('jspdf-autotable').then((x) => {
-//             const doc = new jsPDF.default('p', 'px', 'a4');
-//             (doc as any).autoTable(this.exportColumns, this.dati);
-//             doc.save('dati_analitici.pdf');
-//         });
-//     });
-// }
+  //   exportPdf() {
+  //     import('jspdf').then((jsPDF) => {
+  //         import('jspdf-autotable').then((x) => {
+  //             const doc = new jsPDF.default('p', 'px', 'a4');
+  //             (doc as any).autoTable(this.exportColumns, this.dati);
+  //             doc.save('dati_analitici.pdf');
+  //         });
+  //     });
+  // }
 
 
-exportExcel() {
+  exportExcel() {
     import('xlsx').then((xlsx) => {
-        const worksheet = xlsx.utils.json_to_sheet(this.dati);
-        const workbook = { Sheets: { data: worksheet }, SheetNames: ['data'] };
-        const excelBuffer: any = xlsx.write(workbook, { bookType: 'xlsx', type: 'array' });
-        this.saveAsExcelFile(excelBuffer, 'analisidati');
+      const worksheet = xlsx.utils.json_to_sheet(this.dati);
+      const workbook = { Sheets: { data: worksheet }, SheetNames: ['data'] };
+      const excelBuffer: any = xlsx.write(workbook, { bookType: 'xlsx', type: 'array' });
+      this.saveAsExcelFile(excelBuffer, 'analisidati');
     });
-}
+  }
 
 
-saveAsExcelFile(buffer: any, fileName: string): void {
+  saveAsExcelFile(buffer: any, fileName: string): void {
     let EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
     let EXCEL_EXTENSION = '.xlsx';
     const data: Blob = new Blob([buffer], {
-        type: EXCEL_TYPE
+      type: EXCEL_TYPE
     });
     FileSaver.saveAs(data, fileName + '_export_' + new Date().getTime() + EXCEL_EXTENSION);
 

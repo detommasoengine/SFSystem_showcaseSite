@@ -35,7 +35,7 @@ import { PrecipitationComponent } from './Component/Charts/precipitation/precipi
 import { DividerModule } from 'primeng/divider';
 import { dataGrottaglie } from './Models/Grottaglie copy/ArrayObjectGrottaglie';
 import { CommonModule } from '@angular/common';
-import {MultiSelectModule } from 'primeng/multiselect';
+import { MultiSelectModule } from 'primeng/multiselect';
 import { TablesDashboardComponent } from './Component/Tables/tables-dashboard/tables-dashboard.component';
 import { DataSourceGrottaglieService } from './Services/data-source-grottaglie.service';
 import { TableModule } from 'primeng/table';
@@ -59,17 +59,17 @@ import { DialogModule } from 'primeng/dialog';
     TabsGroupBarComponent,
     TablesDashboardComponent,
 
-//Grafici Precipitazioni Et0 Etc
-Et0EtcTrendComponent,
-PrecipitationComponent,
-RainfallFertigationEventComponent,
-RainEt0EtcTrendComponent,
+    //Grafici Precipitazioni Et0 Etc
+    Et0EtcTrendComponent,
+    PrecipitationComponent,
+    RainfallFertigationEventComponent,
+    RainEt0EtcTrendComponent,
 
-//Grafici andamento Precipitazioni
-//Grafici Irrigazioni
-    
+    //Grafici andamento Precipitazioni
+    //Grafici Irrigazioni
 
-  //  ===============================================================
+
+    //  ===============================================================
 
   ],
   imports: [
@@ -84,12 +84,12 @@ RainEt0EtcTrendComponent,
     MatTabsModule,
     MatDividerModule,
     MatIconModule,
-  TabMenuModule,
+    TabMenuModule,
     BadgeModule,
     SplitterModule,
     FormsModule,
     // FormControl,
-  //   FormGroup,
+    //   FormGroup,
     SelectButtonModule,
     DividerModule,
     CommonModule,
@@ -99,7 +99,7 @@ RainEt0EtcTrendComponent,
     DialogModule
 
   ],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     provideClientHydration(),
     // FileService

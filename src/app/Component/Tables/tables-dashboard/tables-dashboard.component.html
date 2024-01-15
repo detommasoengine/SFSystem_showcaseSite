@@ -27,11 +27,11 @@
       [exportHeader]="'customExportHeader'"
       [tableStyle]="{ 'min-width': '50rem' }"
       [paginator]="true"
-      [row]="10"
+      [rows]="10"
       [showCurrentPageReport]="true"
       currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
       [rowsPerPageOptions]="[5, 10, 15, 20]">
-      
+
       <ng-template pTemplate="caption">
         <div class="flex">
           <div class="multiselect-container flex">
