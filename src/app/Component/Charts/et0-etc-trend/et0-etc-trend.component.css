@@ -1,0 +1,13 @@
+/* et0-etc-trend.component.css */
+.chart-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  :host {
+    display: block;
+    height: 100%;
+    width: 100%; /* Aggiunta della regola per la larghezza al 100% */
+    border: 1px solid #ccc;
+    padding: 10px;
+  }

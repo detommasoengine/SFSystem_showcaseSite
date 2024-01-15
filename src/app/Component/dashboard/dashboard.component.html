@@ -1,0 +1,78 @@
+<p-panel class="card">
+  DASHBOARD Solar Fertigation System
+  <!-- AREA DI SPLIT PRINCIPALE -->
+  <p-splitter [style]="{ height: 'auto' }"   [panelSizes]="[70, 30]" [minSizes]="[70, 30]" styleClass="mb-5">
+    <!--separatore area principale Dashboard-->
+
+    <ng-template class="full-width" pTemplate>
+      
+        <!-- Separatore area Grafico attivo / Tabella -->
+        <p-splitter
+          layout="vertical"
+          [panelSizes]="[50, 50]"
+          [minSizes]="[50, 50]"
+        >
+          <ng-template pTemplate>
+            <p-splitter
+          layout="vertical"
+          [panelSizes]="[50, 50]"
+          [minSizes]="[50, 50]"
+        >
+
+            
+
+            <!-- <div class="column-container align-items-center justify-content-center"> -->
+
+            <!-- <div class="chart-area">
+              <app-et0-etc-trend></app-et0-etc-trend>
+            </div> -->
+
+            <p-divider layout="vertical"></p-divider>
+          
+
+
+            <ng-ptemplate pTemplate>
+
+
+            </ng-ptemplate>
+          </p-splitter>
+          </ng-template>
+          
+          <p-divider type="solid"></p-divider>
+          
+          
+          <ng-template pTemplate>
+            <!--<div class="table-area">   -->        
+              <!-- <table-basic></table-basic> -->
+              <!-- <app-tables-dashboard class="specific-table-css"></app-tables-dashboard>
+
+            </div>-->
+            
+          </ng-template>
+          <!-- </div> -->
+        </p-splitter>
+      
+    </ng-template>
+
+
+    <ng-template pTemplate>
+      <div class="dashboard-area">
+        <div class="align-items-center justify-content-center chart-area">
+          <app-et0-etc-trend></app-et0-etc-trend>
+        </div>
+        <p-divider type="solid"></p-divider>
+        <div class="flex align-items-center justify-content-center">
+          <app-precipitation></app-precipitation>
+        </div>
+        <p-divider type="solid"></p-divider>
+        <div class="flex align-items-center justify-content-center">
+          <app-rain-et0-etc-trend></app-rain-et0-etc-trend>
+        </div>
+        <p-divider type="solid"></p-divider>
+        <div class="flex align-items-center justify-content-center">
+          <app-rainfall-fertigation-event></app-rainfall-fertigation-event>
+        </div>
+      </div>
+    </ng-template>
+  </p-splitter>
+</p-panel>

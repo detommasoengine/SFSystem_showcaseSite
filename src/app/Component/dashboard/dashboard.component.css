@@ -1,0 +1,83 @@
+ /* .column-container {
+    padding:15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%; /* Aggiunta della regola per la larghezza al 100%
+    overflow-x: auto;
+    flex-grow: 3;
+  }  */
+
+
+
+  .full-width {
+    width: 100%;
+    height: 100%;
+    display: flexbox;
+  }
+
+  .dashboard-area {
+    padding:15px;
+    height: auto;
+    width: 100%;
+    display:flexbox;
+    flex-direction: column;
+  }
+  
+  
+  .chart-area {
+    flex-grow: 1; /* Fai in modo che l'area dei grafici si estenda per occupare tutto lo spazio disponibile */
+    flex-direction: column;
+  }
+  
+  .chart-area app-et0-etc-trend,
+  .chart-area app-precipitation,
+  .chart-area app-rain-et0-etc-trend,
+  .chart-area app-rainfall-fertigation-event {
+    width: 100%; /* Assicurati che i grafici occupino tutto lo spazio disponibile in larghezza */
+    height: 100%; /* Assicurati che i grafici occupino tutto lo spazio disponibile in altezza */
+  }
+
+
+
+  .chart-area,
+  .table-area {
+    
+    /* flex-grow:auto; */
+    padding-top: 25px;
+    /* width: 100%; */
+    height: auto;
+    align-content: space-between;
+    /* object-fit: contain; */
+    display: flexbox;
+  }
+
+  .specific-table-css {
+    /* Aggiungi qui i tuoi stili specifici solo per la tabella */
+    overflow-x: auto; /* Esempio: Aggiungere una scrollbar solo quando necessario */
+  }
+
+  
+  
+  
+
+  :host {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Imposta l'altezza del componente al 100% dell'altezza dello schermo */
+  }
+
+
+  /* :host ::ng-deep .p-splitter-panel-nested {
+    flex: block !important;
+} */
+
+
+  .p-panel-container {
+    flex-grow: 1; /* Fai in modo che il p-panel occupi lo spazio disponibile in altezza */
+  }
+
+  .splitter-area {
+    width: 200px;
+  }

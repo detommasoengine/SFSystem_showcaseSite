@@ -1,0 +1,56 @@
+.content {
+    padding: 2rem;
+  }
+  
+  table {
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .column-container {
+    padding:15px;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%; /* Aggiunta della regola per la larghezza al 100% */
+  }
+
+
+  .example-container {
+    height: 400px;
+    overflow: auto;
+  }
+  
+  table {
+    width: 100%;
+  }
+
+
+  /* .example-tab-icon {
+    margin-right: 8px;
+  } */
+
+  .sticky-table .mat-header-row,
+  .sticky-table .mat-column-DATA {
+    position: sticky;
+    left: 0;
+    z-index: 1; /* Assicura che la colonna rimanga sopra le altre colonne */
+    background-color: #544ef6; /* Puoi personalizzare il colore di sfondo se necessario */
+  }
+
+  th  {
+    padding-bottom: 10px; /* Aggiungi spazio sotto l'intestazione della colonna */
+    background-color: black;
+    color: aliceblue;
+    border-bottom: 3px solid #ddd; /* Aggiungi una linea divisoria sotto l'intestazione della colonna */
+  }
+  
+  td {
+    padding-top: 10px; /* Aggiungi spazio sopra il contenuto delle celle */
+    color:rgb(255, 255, 255);
+    font-weight:bold;
+    background-color: darkgray;
+    text-shadow: 2px 2px 3px #333;
+
+  }

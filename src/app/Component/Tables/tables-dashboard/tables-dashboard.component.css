@@ -1,0 +1,73 @@
+html {
+    font-size: autopx;
+}
+
+body {
+    font-family: var(--font-family);
+    font-weight: normal;
+    background: var(--surface-ground);
+    color: var(--text-color);
+    padding: 1rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Stile per la responsività */
+@media (max-width: 600px) {
+    .card {
+        padding: 1rem;
+    }
+    .icons-container {
+        flex-direction: column;
+        align-items: flex-end;
+        margin-top: 1rem;
+    }
+    .flex {
+        flex-direction: column;
+    }
+}
+
+.card {
+    /* background: var(--surface-card); */
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+
+
+.hidden-column {
+    display: none;
+  }
+
+
+  /* :host ::ng-deep .card .p-datatable {
+    background: rgb(183, 38, 38); /* Imposta il colore di sfondo desiderato */
+  /* } */
+
+  /* :host ::ng-deep .card .p-datatable th, */
+  /* :host ::ng-deep .card .p-datatable td { */
+    /* background: #303030; Imposta il colore di sfondo delle colonne */
+    /* color: #ffffff; Imposta il colore del testo delle colonne */
+  /* } */
+
+  /* Aggiungi ulteriori regole CSS a seconda delle tue esigenze */
+  .flex {
+    display: flex;
+}
+
+.justify-content-end {
+    justify-content: flex-end;
+}
+
+.multiselect-and-buttons-container {
+    display: flex;
+    align-items: center; /* Per allineare verticalmente i contenuti */
+    margin-right: auto; /* Spinge a sinistra il div precedente (multiselect-container) il più possibile */
+}
+
+.icons-container {
+    display: flex;
+    justify-content: flex-end; /* Allinea a destra */
+}

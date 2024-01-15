@@ -1,0 +1,90 @@
+/* Stili per il container principale */
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section {
+    display: table;
+  }
+  
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    max-width: 600px;
+  }
+  
+  .example-button-row .mat-mdc-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+
+  /* Stili per i pulsanti */
+  .example-flex-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px; /* Aggiunto spazio tra i pulsanti e le tab */
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+  
+
+  .button-container {
+    display: flex;
+  }
+  
+  button {
+   /* margin-right: 10px;  /* Spazio tra i pulsanti */
+    margin: 0 10px;
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  }
+  
+  button.active {
+    background-color: #2980b9;  /* Colore di sfondo quando attivo */
+    color: #ffffff;            /* Colore del testo quando attivo */
+  }
+  
+
+
+
+
+  /* Stili per le tabs */
+mat-tab-group {
+  max-width: 600px; /* Impostato una larghezza massima per le tabs */
+
+}
+
+/* Aggiunto stile per le tabs */
+.mat-tab-label {
+  /* background-color: #3498db; */
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.mat-tab-label-active {
+  background-color: #2980b9;
+}
+
+/* Aggiunto stile per il container delle tabs */
+.tabs-container {
+  margin-top: 20px; /* Aggiunto spazio tra i pulsanti e le tabs */
+}
